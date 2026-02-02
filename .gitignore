@@ -1,36 +1,14 @@
-# Python cache
 __pycache__/
 *.pyc
 *.pyo
-*.pyd
-
-# Virtual environments
-venv/
-env/
-.venv/
-
-# Environment variables
-.env
-
-# Logs
 *.log
 
-# Database files
-*.db
-*.sqlite
-*.sqlite3
+.env
+.venv/
+venv/
 
-# Hugging Face cache (models are large)
-.cache/
-huggingface/
-
-# Pytest cache
 .pytest_cache/
+.cache/
+.huggingface/
 
-# OS files
-.DS_Store
-Thumbs.db
-
-# IDE / Editor files
-.vscode/
-.idea/
+content.db
