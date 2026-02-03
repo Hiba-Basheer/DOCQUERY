@@ -90,11 +90,4 @@ DOCQUERY/
 
 ---
 
-## Run Tests
 
-Make sure you have pytest installed:
-
-```bash
-pytest tests/ 
-
-```# DOCQUERY
