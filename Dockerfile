@@ -3,9 +3,17 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
+# install system dependencies for OCR
+RUN apt-get update && apt-get install -y \
+    tesseract-ocr \
+    libtesseract-dev \
+    && rm -rf /var/lib/apt/lists/*
+    
 # copying requirements
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt \
+    --extra-index-url https://download.pytorch.org/whl/cpu
+
 
 # copying application
 COPY app/ ./app/

@@ -1,7 +1,7 @@
 fastapi
 uvicorn
-pillow
 pytesseract
+pillow
 transformers
-torch
+torch==2.1.0+cpu
 pytest
