@@ -23,7 +23,7 @@ User → FastAPI API → OCR (Tesseract) → SQLite DB → LLM (T5-small) → An
 | Component      | Choice                | Reason |
 |----------------|---------------------|--------|
 | OCR            | pytesseract          | Simple, works well for invoices and receipts |
-| LLM            | google/flat-t5-small | Lightweight, fast, open-source |
+| LLM            | t5-small | Lightweight, fast, open-source |
 | Web Framework  | FastAPI              | Easy to create endpoints and test them |
 | Database       | SQLite               | Lightweight, simple, good for this assignment |
 | Docker         | python:3.11-slim     | Easy to containerize, reproducible |
