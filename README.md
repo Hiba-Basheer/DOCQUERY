@@ -9,8 +9,6 @@ This is a simple document intelligence system. You can upload images of invoices
 The system pipeline:
 User → FastAPI API → OCR (Tesseract) → SQLite DB → LLM (T5-small) → Answer
 
-
-
 - FastAPI: REST API with `/upload`, `/ask`, `/health`  
 - OCR (pytesseract): extract text from images or PDFs  
 - SQLite: store document text and metadata  
@@ -43,7 +41,34 @@ User → FastAPI API → OCR (Tesseract) → SQLite DB → LLM (T5-small) → An
 - Unit tests for `/health`, `/upload`, `/ask`  
 
 ---
+Notes on /upload Endpoint
 
+The /upload endpoint only accepts POST requests. Trying to access it via a browser (GET request) will return:
+
+405 Method Not Allowed
+
+
+To test the endpoint, use curl or any HTTP client. Example:
+
+curl -X POST "http://localhost:8000/upload" \
+  -F "file=@/path/to/your/file.pdf"
+
+
+Response example:
+
+{
+  "doc_id": "123e4567-e89b-12d3-a456-426614174000",
+  "metadata": {
+    "filename": "file.pdf",
+    "pages": 2,
+    "language": "eng"
+  }
+}
+
+
+⚠️ Ensure the file is one of the supported formats: .png, .jpg, .jpeg, .pdf.
+
+---
 ## 4. Incomplete / Skipped Features
 
 - Multi-page PDF support not added  

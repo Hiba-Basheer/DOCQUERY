@@ -3,5 +3,6 @@ uvicorn
 pytesseract
 pillow
 transformers
-torch==2.1.0+cpu
 pytest
+numpy<2
+python-multipart
